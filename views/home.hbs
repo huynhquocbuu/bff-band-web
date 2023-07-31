@@ -14,7 +14,7 @@
                     <th scope="col">Ref-Link</th>
                     <th scope="col">Lyric</th>
                     <th scope="col">Tone</th>
-                    
+                    <th scope="col">MuseScore</th>                 
                 </tr>
             </thead>
             <tbody>
@@ -31,7 +31,8 @@
                             {{#each this.song_attibutes}}
                                 <a target="_blank" href="/uploads/songs/{{../normalize_name}}/{{band_sheet}}">{{tone}}</a> |
                             {{/each}}
-                        </td>     
+                        </td>
+                        <td><a target="_blank" href="/uploads/songs/{{normalize_name}}/{{band_sheet_musescore}}">musescore-file</a></td>
                     </tr>
                 {{/each}}
                 

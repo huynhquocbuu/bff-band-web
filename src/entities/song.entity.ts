@@ -1,5 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { SongAttribute } from "./song-attribute.entity";
+import { BandVideo } from "./band-video.entity";
 
 
 @Entity('songs')
@@ -33,4 +34,7 @@ export class Song {
 
     @OneToMany(() => SongAttribute, (e) => e.song)
     song_attibutes: SongAttribute[];
+
+    @OneToMany(() => BandVideo, (e) => e.song)
+    videos: BandVideo[];
 }
