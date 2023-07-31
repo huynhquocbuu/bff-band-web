@@ -1,0 +1,43 @@
+{{#> public}}
+  {{#*inline "content"}}
+    <div class="row">
+        <p>BFF Band</p>
+        <p>Play this week:</p>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Song Name</th>
+                    <th scope="col">Composer</th>
+                    <th scope="col">Singer</th>
+                    <th scope="col">Ref-Link</th>
+                    <th scope="col">Lyric</th>
+                    <th scope="col">Tone</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {{#each viewData.songs}}
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>{{name}}</td>
+                        <td>{{composer}}</td>
+                        <td>{{singer}}</td>
+                        <td><a target="_blank" href="{{ref_link}}">ref-link</a></td>
+                        <td><a target="_blank" href="/uploads/songs/{{normalize_name}}/{{lyric_url}}">lyric</a></td>
+                        
+                        <td>
+                            {{#each this.song_attibutes}}
+                                <a target="_blank" href="/uploads/songs/{{../normalize_name}}/{{band_sheet}}">{{tone}}</a> |
+                            {{/each}}
+                        </td>     
+                    </tr>
+                {{/each}}
+                
+                
+            </tbody>
+        </table>
+    </div>
+  {{/inline}}
+{{/public}}
