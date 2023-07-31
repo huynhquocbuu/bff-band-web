@@ -53,3 +53,10 @@ values ('Giữa Đại Lộ Đông Tây', 'giua-dai-lo-dong-tay','jazz', 'Hứa 
 insert into song_attributes (song_id, tone, band_sheet) values
 ((select id from songs where normalize_name = 'giua-dai-lo-dong-tay'), 
 'Bm', 'Giua-Dai-Lo-Dong-Tay-Bm.pdf');
+--
+insert into songs (name, normalize_name, genre, composer, singer, lyric_url, is_practiced_this_week, ref_link, position) 
+values ('Highway Star', 'highway-star','roc', 'Deep Purple', 'Deep Purple', 
+'Highway-Star.docx', 1, 'https://youtu.be/UAKCR7kQMTQ', 5);
+insert into song_attributes (song_id, tone, band_sheet) values
+((select id from songs where normalize_name = 'highway-star'), 
+'Gm', 'Highway-Star-Gm.pdf');
