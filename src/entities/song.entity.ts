@@ -35,6 +35,9 @@ export class Song {
     @Column()
     position: number;
 
+    @Column({nullable: true})
+    musescore_sheet: string;
+
     @OneToMany(() => SongAttribute, (e) => e.song)
     song_attibutes: SongAttribute[];
 
