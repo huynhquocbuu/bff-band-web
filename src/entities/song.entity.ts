@@ -32,6 +32,9 @@ export class Song {
     @Column({nullable: true})
     perform_at: string;
 
+    @Column()
+    position: number;
+
     @OneToMany(() => SongAttribute, (e) => e.song)
     song_attibutes: SongAttribute[];
 

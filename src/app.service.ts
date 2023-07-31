@@ -17,7 +17,8 @@ export class AppService {
   findSongsPracticeThisWeek(isPracticedThisWeek: boolean) : Promise<Song[]> {
     return this.songRepository.find({
       where : {is_practiced_this_week: isPracticedThisWeek},
-      relations: ['song_attibutes', 'song_attibutes.song'],
+      relations: {song_attibutes: true, videos: true},
+      order: {position: "ASC"}
     });
   }
 }

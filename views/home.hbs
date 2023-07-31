@@ -1,8 +1,8 @@
 {{#> public}}
   {{#*inline "content"}}
     <div class="row">
-        <h4>BFF Band</h4>
-        <h4>Play this week:</h4>
+        <h4 class="fw-bold">BFF Band</h4>
+        <h4 class="fw-bold">Play this week:</h4>
 
         <table class="table table-striped">
             <thead>
@@ -14,13 +14,14 @@
                     <th scope="col">Ref-Link</th>
                     <th scope="col">Lyric</th>
                     <th scope="col">Tone</th>
-                    <th scope="col">MuseScore</th>                 
+                    <th scope="col">MuseScore</th>
+                    <th scope="col">Band Videos</th>              
                 </tr>
             </thead>
             <tbody>
                 {{#each viewData.songs}}
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">{{position}}</th>
                         <td>{{name}}</td>
                         <td>{{composer}}</td>
                         <td>{{singer}}</td>
@@ -33,6 +34,12 @@
                             {{/each}}
                         </td>
                         <td><a target="_blank" href="/uploads/songs/{{normalize_name}}/{{band_sheet_musescore}}">musescore-file</a></td>
+
+                        <td>
+                            {{#each this.videos}}
+                                <a target="_blank" href="/uploads/songs/{{../normalize_name}}/{{video}}">view</a> |
+                            {{/each}}
+                        </td>
                     </tr>
                 {{/each}}
                 
