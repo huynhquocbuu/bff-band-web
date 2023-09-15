@@ -9,8 +9,6 @@ export class SongAttribute {
     @Column()
     tone: string;
 
-    @Column({nullable: true})
-    band_sheet_musescore: string;
     @Column()
     band_sheet: string;
 
