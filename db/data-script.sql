@@ -60,3 +60,5 @@ values ('Highway Star', 'highway-star','roc', 'Deep Purple', 'Deep Purple',
 insert into song_attributes (song_id, tone, band_sheet) values
 ((select id from songs where normalize_name = 'highway-star'), 
 'Gm', 'Highway-Star-Gm.pdf');
+
+
